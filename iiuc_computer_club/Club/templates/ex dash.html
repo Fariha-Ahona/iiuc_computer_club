@@ -1,0 +1,190 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Dashboard</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+    rel="stylesheet">
+  <link rel="stylesheet" href="../static/css/exdash.css">
+  <script src="https://kit.fontawesome.com/09f8cf4725.js" crossorigin="anonymous"></script>
+</head>
+
+<body style="background-color: white;">
+  <!-- partial:index.partial.html -->
+  <div class="dashboard-river">
+
+
+
+    <div class="dashboard">
+
+      <div class="ui-row-1">
+
+        <div class="logo-comp" style="display: flex; align-items: center; gap: 10px;">
+          <a href="#" style="text-decoration: none; color: inherit; display: flex; align-items: center; gap: 10px;">
+            <!-- Club Logo -->
+            <img src="../static/Images/logowhite.jpeg" alt="Club Logo" class="logo"
+              style="width: 50px; height: 50px; border-radius: 50%;">
+            <!-- Club Name -->
+            <span style="font-size: 18px; font-weight: bold;">IIUC Computer Club</span>
+          </a>
+        </div>
+
+        <div class="profile">
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-bell-fill" viewBox="0 0 16 16">
+            <path
+              d="M8 16a2 2 0 0 0 2-2H6a2 2 0 0 0 2 2zm.995-14.901a1 1 0 1 0-1.99 0A5.002 5.002 0 0 0 3 6c0 1.098-.5 6-2 7h14c-1.5-1-2-5.902-2-7 0-2.42-1.72-4.44-4.005-4.901z" />
+          </svg>
+          <h3 class="profile-username">{{ user.username }}</h3>
+
+          <svg xmlns="http://www.w3.org/2000/svg" fill="currentColor" class="bi bi-caret-down-fill" viewBox="0 0 16 16">
+
+          </svg>
+
+          <a href="/logout/" class="dropdown-item">Logout</a>
+
+
+          <div></div>
+        </div>
+
+
+
+      </div>
+
+      <div class="ui-row-2">
+
+
+
+        <div class="main-content">
+
+          <div class="header">
+
+
+
+
+
+
+
+          </div>
+
+
+          <hr>
+
+          <div class="featured">
+
+            <div>
+
+              <div></div>
+
+              <div>
+                <h3>Notice</h3>
+                <p>Here is the new notice for the student of Computer Science and Engineering</p>
+                <a href="{% url 'notice' %}" title="see details">See Details</a>
+              </div>
+
+            </div>
+
+            <div>
+
+              <div></div>
+
+              <div>
+                <h3>Rules and Responsibility</h3>
+                <p>We are thrilled to announce a new project for the needy people.</p>
+                <a href="../static/files/IIUC Computer Club Rules and Responsibilities.docx"
+                  title="Download Rules and Responsibility Document"
+                  download="IIUC Computer Club Rules and Responsibilities.docx">
+                  Download
+                </a>
+              </div>
+
+
+            </div>
+
+            <div>
+
+              <div></div>
+
+              <div>
+
+                <h3>Announcement</h3>
+                <p>Lets welcome our new team of Competitive programing that participating in ICPC24 in 24 janurary</p>
+                <a href="{% url 'notice' %}" title="see more"> Learn More</a>
+              </div>
+
+            </div>
+
+            <div>
+
+              <div></div>
+
+              <div>
+                <h3>Acheivements</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="{% url 'event_list' %}" title="featured clay">Let's Go</a>
+              </div>
+
+            </div>
+
+            <div>
+
+              <div></div>
+
+              <div>
+                <h3>Task and Volunteer Excuitive</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="../static/files/Excuitive list.pdf" title="Download Excuitive list Document"
+                  download="Excuitive list.pdf">
+                  Here is the list
+                </a>
+              </div>
+
+            </div>
+
+            <div>
+
+              <div></div>
+
+              <div>
+                <h3>Report and Analytics</h3>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+                <a href="{% url 'blog_page' %}" title="featured clay">Let's Go</a>
+              </div>
+
+            </div>
+
+          </div>
+
+          <hr>
+
+
+
+
+
+
+
+
+        </div>
+
+      </div>
+
+    </div>
+
+  </div>
+
+  </div>
+
+  </div>
+
+
+
+  </div>
+  <!-- partial -->
+
+</body>
+
+</html>

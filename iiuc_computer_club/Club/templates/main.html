@@ -1,0 +1,378 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="{% static 'css/style.css' %}">
+  <script src="../static/js/countdown.js"></script>
+
+  <title>IIUC Computer Club</title>
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
+  <link rel="shortcut icon" href="images/fevicon.png" type="image/x-icon" />
+  <title>IIUC Computer Club</title>
+
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="{% static 'css/bootstrap.css' %}" />
+
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap" rel="stylesheet" />
+  <!--owl slider stylesheet -->
+  <link rel="stylesheet" type="text/css"
+    href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
+  <!-- nice select -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/css/nice-select.min.css"
+    integrity="sha256-mLBIhmBvigTFWPSCtvdu6a76T+3Xyt+K571hupeFLg4=" crossorigin="anonymous" />
+  <!-- font awesome style -->
+  <link href="css/font-awesome.min.css" rel="stylesheet" />
+
+  <!-- Custom styles for this template -->
+
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
+</head>
+
+<body>
+  <div class="hero_area">
+    <!-- header section starts -->
+    <header class="header_section" class="space">
+      <div class="header_bottom">
+        <div class="container-fluid">
+          <nav class="navbar navbar-expand-lg custom_nav-container">
+            <img src="../static/Images/logo.png" alt="Club Logo" style="height: 40px; margin-right: 10px;">IIUC Computer
+            Club </a>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent"
+              aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+              <span class=""> </span>
+            </button>
+
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <ul class="navbar-nav">
+                <li class="nav-item active">
+                  <a class="nav-link" href="main.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#about"> About</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#service">Services</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#event"> Event </a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="#contact">Contact Us</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="{% url 'signin' %}">
+                    <i class="fa fa-user" aria-hidden="true"></i>
+                    <span> Login </span>
+                  </a>
+                </li>
+                <form class="form-inline justify-content-center">
+                  <button class="btn my-2 my-sm-0 nav_search-btn" type="submit">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                  </button>
+                </form>
+              </ul>
+            </div>
+          </nav>
+        </div>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- Display the success message -->
+    {% if message %}
+    <div class="alert alert-success text-center">
+      <h2>{{ message }}</h2>
+    </div>
+    {% endif %}
+
+    <!-- slider section -->
+    <section class="slider_section" class="space">
+      <div id="customCarousel1" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="image-container">
+              <img src="static/images/f2.jpeg" alt="Full Screen Image" class="slider-image">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="image-container">
+              <img src="static/images/03.jpg" alt="Full Screen Image" class="slider-image">
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="image-container">
+              <img src="static/images/f1.jpeg" alt="Full Screen Image" class="slider-image">
+            </div>
+          </div>
+        </div>
+        <div class="carousel_btn-box">
+          <a class="carousel-control-prev" href="#customCarousel1" role="button" data-slide="prev">
+            <i class="fa fa-arrow-left" aria-hidden="true"></i>
+            <span class="sr-only">Previous</span>
+          </a>
+          <a class="carousel-control-next" href="#customCarousel1" role="button" data-slide="next">
+            <i class="fa fa-arrow-right" aria-hidden="true"></i>
+            <span class="sr-only">Next</span>
+          </a>
+        </div>
+      </div>
+    </section>
+    <!-- end slider section -->
+  </div>
+  <!-- about section -->
+
+  <section class="about_section" id="about" class="space">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-5 offset-md-1">
+          <div class="detail-box pr-md-2">
+            <div class="heading_container">
+              <h2 class="">About Us</h2>
+            </div>
+            <p class="detail_p_mt">
+              The IIUC Computer Club is a student organization at the International Islamic University Chittagong
+              (IIUC), dedicated to fostering a community of tech enthusiasts. The club focuses on enhancing members'
+              knowledge and skills in the fields of computer science, programming, software development, and emerging
+              technologies.
+            </p>
+            <a href="{%url 'about' %}" class="btn-box"> Read More </a>
+          </div>
+        </div>
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="../static/images/about.jpeg" class="box_img" alt="about img" />
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- about section ends -->
+
+  <!-- service section -->
+  <!-- service section -->
+
+  <section class="service_section layout_padding" id="service"class="space">
+    <div class="container">
+      <div class="heading_container heading_center">
+        <h2 class="">Our Services</h2>
+        <p class="col-lg-8 px-0">
+          We are pleased to announce the range of services provided by IIUC Computer Club to support and empower our
+          members. Our club is dedicated to fostering growth, learning, and collaboration among students. Below is an
+          overview of the key services we offer
+        </p>
+      </div>
+      <div class="service_container">
+        <div class="carousel-wrap">
+          <div class="service_owl-carousel owl-carousel">
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="static/images/skill.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Skill Development</h5>
+                  <p>
+                    Organizing workshops, coding bootcamps, and training sessions on programming languages, web
+                    development, AI, and more
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="static/images/train.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Workshops and Training Programs</h5>
+                  <p>
+                    when looking at its layout. The point of using Lorem Ipsum
+                    is that it has a more-or-less normal
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="static/images/book.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Knowledge Sharing</h5>
+                  <p>
+                    Creating a collaborative environment where students can exchange ideas, solve problems, and work on
+                    innovative projects.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="static/images/mentorship.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Career Preparation</h5>
+                  <p>
+                    Providing guidance for internships, job opportunities, and career advancement in tech-related
+                    fields.
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="static/images/resource.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Resource Sharing</h5>
+                  <p>
+                    Access to exclusive materials, tutorials, and tools.
+                    Collaboration spaces for teamwork and innovation
+                  </p>
+                </div>
+              </div>
+            </div>
+            <div class="item">
+              <div class="box">
+                <div class="img-box">
+                  <img src="static/images/network.png" alt="" />
+                </div>
+                <div class="detail-box">
+                  <h5>Community Building</h5>
+                  <p>
+                    Regular meetups to foster friendships and share ideas
+                    Platforms for open discussions and creative brainstorming.
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      
+    </div>
+  </section>
+
+  <!-- service section ends -->
+  <!-- service section ends -->
+  <!-----Event Section-->
+  <section>
+    <div class="countdown space" id="event">
+      <h1>KAIST Research Seminar</h1>
+      <p>IIUC AUDITORIUM, IIUC</p>
+      <div id="countdown-timer">
+        <div class="countdown-item">
+          <span id="days">00</span>
+          <p>Days</p>
+        </div>
+        <div class="countdown-item">
+          <span id="hours">00</span>
+          <p>Hours</p>
+        </div>
+        <div class="countdown-item">
+          <span id="minutes">00</span>
+          <p>Minutes</p>
+        </div>
+        <div class="countdown-item">
+          <span id="seconds">00</span>
+          <p>Seconds</p>
+        </div>
+      </div>
+      <div>
+        <a href="https://docs.google.com/forms/d/e/1FAIpQLSevHheqX8iKJipJ4hnr-c3sFAQRm-4Hii3LRYqLpScRsKhEkw/viewform?usp=dialog"
+        target="_blank" class="register-btn">
+        Register Now
+      </a>
+      </div>
+  </section>
+  <!-- contact section -->
+  <section class="contact_section" id="contact">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="{% static 'images/getin.jpg' %}" class="box_img" alt="about img" />
+          </div>
+        </div>
+        <div class="col-md-5 mx-auto">
+          <div class="form_container">
+            <div class="heading_container heading_center">
+              <h2>Get In Touch</h2>
+            </div>
+            <form action="{% url 'contact' %}" method="POST">
+              {% csrf_token %}
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="text" name="name" class="form-control" placeholder="Your Name" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col-lg-6">
+                  <input type="text" name="phone" class="form-control" placeholder="Phone Number" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <input type="email" name="email" class="form-control" placeholder="Email" required />
+                </div>
+              </div>
+              <div class="form-row">
+                <div class="form-group col">
+                  <textarea name="message" class="form-control message-box" placeholder="Message" rows="4"
+                    required></textarea>
+                </div>
+              </div>
+              <div class="btn_box">
+                <button type="submit" class="btn btn-primary">SEND</button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+  <!-- footer section -->
+  <footer class="footer_section">
+    <div class="container">
+      <p>
+        &copy; <span id="displayYear"></span> All Rights Reserved By
+        <a href="https://www.iiuc.ac.bd/">IIUC</a>
+      </p>
+    </div>
+  </footer>
+  <!-- footer section -->
+  <!-- jQery -->
+  <script src="static/js/jquery-3.4.1.min.js"></script>
+  <!-- popper js -->
+  <script src="https://cdn.jsdelivr.net/npm/popper.js@1.16.0/dist/umd/popper.min.js"
+    integrity="sha384-Q6E9RHvbIyZFJoft+2mJbHaEWldlvI9IOYy5n3zV9zzTtmI3UksdQRVvoxMfooAo"
+    crossorigin="anonymous"></script>
+  <!-- bootstrap js -->
+  <script src="static/js/bootstrap.js"></script>
+  <!-- owl slider -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <!-- nice select -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-nice-select/1.1.0/js/jquery.nice-select.min.js"
+    integrity="sha256-Zr3vByTlMGQhvMfgkQ5BtWRSKBGa2QlspKYJnkjZTmo=" crossorigin="anonymous"></script>
+  <!-- custom js -->
+  <script src="static/js/custom.js"></script>
+
+</body>
+
+</html>

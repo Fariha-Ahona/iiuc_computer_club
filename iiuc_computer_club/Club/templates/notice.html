@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Notice Board</title>
+    <link rel="stylesheet" href="../static/css/notice.css" />
+  </head>
+  <body>
+    <!-- Hero Area -->
+    <div class="hero_area">
+      <!-- Header Section -->
+      <header class="header_section">
+        <div class="container-fluid">
+          <nav class="navbar">
+            <a class="navbar-brand" href="#">
+              <img
+                src="../static/Images/logowhite.jpeg"
+                alt="Club Logo"
+                class="logo"
+              />
+              IIUC Computer Club
+            </a>
+            <ul class="nav-links">
+              <li><a href=" {% url 'main' %}">Home</a></li>
+              <li><a href="#notice">Notice</a></li>
+              <li><a href="#announcement">Announcement</a></li>
+              <li><a href="/logout/" class="dropdown-item">Logout</a></li>
+            </ul>
+          </nav>
+        </div>
+      </header>
+    </div>
+
+    <!-- Notice Section -->
+    <section id="notice" class="section">
+      <h2>Notice Board</h2>
+      <p>Stay tuned for the latest Notice from IIUC Computer Club.</p>
+      <div class="horizontal-container">
+        <!-- Container 1 -->
+        {% for notice in notices %}
+        <div class="card horizontal">
+          {% if notice.image %}
+          <img
+            src="{{ notice.image.url }}"
+            alt="{{ notice.title }}"
+            width="100"
+          />
+          {% endif %}
+          <div class="card-content">
+            <h5>{{ notice.title }}</h5>
+            <p>{{ notice.content }}</p>
+          </div>
+        </div>
+
+        {% endfor %}
+      </div>
+    </section>
+    <!-- Announcement Section -->
+    <section id="announcement" class="section">
+      <h2>Announcements</h2>
+      <div class="container">
+        <div class="card-wrapper">
+          <div class="card">
+            <img
+              src="../static/Images/annoucment.png"
+              alt="Announcement 1"
+              class="card-image"
+            />
+            <div class="card-content">
+              <h5>New Committee Members Announcement</h5>
+              <p>
+                Congratulations to the newly elected members of the IIUC
+                Computer Club committee. Let's work together for a great year
+                ahead!
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="../static/images/FAREWELL.jpg"
+              alt="Volunteer Opportunities"
+              class="card-image"
+            />
+            <div class="card-content">
+              <h5>
+                "Annoucement for Farewell Program for Batch 44-49 and Reception
+                program Batch 58"
+              </h5>
+              <p>
+                We are pleased to announce that a farewell program for Batch
+                44-49 will be held to celebrate and honor their journey at IIUC.
+                This special occasion will be a time to reminisce, share
+                memories, and wish them the best for their future endeavors.All
+                students and faculty members are cordially invited to join us in
+                making this event a memorable on November 23 at
+                Central Auditorium
+              </p>
+            </div>
+          </div>
+          <div class="card">
+            <img
+              src="../static/Images/rem.jpeg"
+              alt="Fee Submission Deadline"
+              class="card-image"
+            />
+            <div class="card-content">
+              <h5>Reminder: Membership Fee Submission Deadline</h5>
+              <p>
+                Please submit your membership fees by 1st January 2025 to avoid
+                deactivation.
+              </p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+  </body>
+</html>

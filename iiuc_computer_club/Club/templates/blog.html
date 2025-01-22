@@ -1,0 +1,396 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <style>
+        body {
+            margin: 0;
+            font-family: 'El Messiri', sans-serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            min-height: 100vh;
+            background:  linear-gradient(to bottom,rgb(255, 255, 255),rgb(82, 99, 175), #24243e);
+            color: #1b1a1a;
+        }
+
+        .banner {
+            width: 100%;
+        }
+
+        .logo {
+            height: 50px;
+            margin-right: 10px;
+           
+        }
+
+        .content {
+            width: 100%;
+            position: relative;
+            top: 20%;
+            transform: translateY(-100%);
+            text-align: center;
+            color: #000000ca;
+            border-radius: 5px;
+        }
+
+        .content h1 {
+            font-size: 200px;
+            margin-top: 80px;
+            text-transform: uppercase;
+        }
+
+        .content p {
+            color: rgb(0, 0, 0);
+            margin: 200px auto;
+            font-weight: 100;
+            line-height: 25px;
+        }
+
+        .navi {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background:  linear-gradient(to bottom,rgb(96, 97, 187), #463f8f, #24243e);
+            padding: 20px 50px;
+            width: 100%;
+            box-sizing: border-box;
+            
+        }
+        
+        .navi a {
+            font-size: 20px;
+            text-transform: uppercase;
+            color:rgb(255, 255, 255);
+            text-decoration: none;
+            padding: 10px 15px;
+            border-radius: 13px;
+            transition: all 0.2s linear;
+        }
+
+        .navi a:hover {
+            cursor: pointer;
+            background-color:rgb(106, 99, 206);
+            color: #000;
+        }
+
+        section {
+            padding: 14px;
+            background: linear-gradient(180deg,rgb(119, 105, 201) 0%, #8abee0 100%);
+            width: 100%;
+            box-sizing: border-box;
+        }
+
+        h2 {
+            color:rgb(255, 255, 255);
+        }
+
+        .sub-feature {
+            display: none;
+            padding: 10px;
+            background-color: #c696ca;
+            margin-top: 20px;
+            border-radius: 15px;
+        }
+
+        .sub-feature.active {
+            display: block;
+        }
+
+        .glass-container {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 10px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 1200px;
+            text-align: left;
+            margin: 0 auto;
+        }
+
+        .blog-post {
+            margin-bottom: 30px;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .blog-post:hover {
+            transform: scale(1.05);
+        }
+
+        .blog-title {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        .blog-author {
+            font-size: 15px;
+        }
+
+        .blog-meta {
+            color: #555;
+            font-size: 14px;
+            margin-bottom: 10px;
+        }
+
+        .blog-content {
+            line-height: 1.6;
+        }
+
+        .nav-links {
+            list-style: none;
+            display: flex;
+            gap: 15px;
+            margin: 0;
+            padding: 0;
+        }
+        
+        .nav-links li {
+            display: flex;
+        }
+        
+        .nav-links a {
+            text-decoration: none;
+            color: white;
+            font-weight: 600;
+            padding: 8px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+        
+        .nav-links a:hover {
+            background-color: #357ABD;
+        }
+        
+        .read-more {
+            display: inline-block;
+            padding: 5px 10px;
+            background: #6c67ac;
+            color: white;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 10px;
+        }
+
+        .read-more:hover {
+            background:rgb(235, 245, 255);
+        }
+
+        /* Form Styles */
+        form {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-radius: 15px;
+            padding: 20px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 600px;
+            width: 100%;
+            margin: 20px auto;
+        }
+
+        form h2 {
+            margin-bottom: 15px;
+            color: #493e5f;
+            text-align: center;
+        }
+
+        form input,
+        form textarea,
+        form select,
+        form button {
+            width: 100%;
+            padding: 5px;
+            margin: 10px 0;
+            border: 1px solid #ccc;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        form button {
+            background: #6c67ac;
+            color: white;
+            cursor: pointer;
+            border: none;
+            transition: background 0.3s ease-in-out;
+        }
+
+        form button:hover {
+            background:rgb(145, 167, 240);
+        }
+        .dropdown-item {
+            display: block;
+            padding: 10px 15px;
+            color: #333;
+            text-decoration: none;
+            font-size: 14px;
+          }
+          
+        .dropdown-item:hover {
+            background-color: #f5f5f5;
+          }
+          
+        .profile:hover .dropdown-menu {
+            display: block;
+          }
+    </style>
+    <title>Report and analytics</title>
+</head>
+
+<body>
+    <div class="banner">
+        <div class="navi">
+            <a href="#" style="text-decoration: none; color: #fffff; display: flex; align-items: center; gap: 10px;">
+                <!-- Club Logo -->
+                <img src="../static/Images/logowhite.jpeg" alt="Club Logo" class="logo" style="width: 50px; height: 50px; border-radius: 0%; object-fit: cover;">
+                <!-- Club Name -->
+                <span style="font-size: 18px; font-weight: bold; line-height: 1; white-space: nowrap;">IIUC COMPUTER CLUB</span>
+              </a>
+            <nav>
+                
+                <ul class="nav-links">
+                    <li><a href="{% url 'main' %}">Home</a></li>
+                    <li><a href="{% url 'dashboard' %}">Dashboard</a></li>
+                    <li><a href="/logout/" class="dropdown-item">Logout</a> </li>
+                    
+                </ul>
+            </nav>
+        </div>
+    </div>
+    {% for feature, posts in featured_posts.items %}
+    <section id="{{ feature }}" class="sub-feature">
+        <div class="glass-container">
+            {% for post in posts %}
+            <div class="blog-post">
+                <h3>Feature: {{ post.get_feature_display }}</h3>
+                <h2 class="blog-title">{{ post.title }}</h2>
+                <h3 class="blog-author">{{ post.author }}</h3>
+                <p class="blog-meta">Published: {{ post.created_at }}</p>
+                <p class="blog-content">{{ post.content }}</p>
+                <!-- excutives position/ general-->
+            </div>
+            {% endfor %}
+        </div>
+    </section>
+    {% endfor %}
+
+    <form method="post" enctype="multipart/form-data">
+        <h2>Add a New Report</h2>
+        {% csrf_token %}
+        {{ form.as_p }}
+        <button type="submit">Submit</button>
+    </form>
+
+    <script>
+        function showFeature(feature) {
+            console.log('Showing feature:', feature);
+            document.querySelectorAll('.sub-feature').forEach(function (element) {
+                element.classList.remove('active');
+            });
+
+            var selectedFeature = document.getElementById(feature);
+            if (selectedFeature) {
+                selectedFeature.classList.add('active');
+                selectedFeature.scrollIntoView({ behavior: 'smooth' });
+            }
+        }
+    </script>
+
+</body>
+
+</html>
+
+<!--app views.py
+from .models import BlogPost
+from .forms import BlogPostForm
+def Blog(request):
+    return render(request, 'Blog.html')
+    
+#blog's fucion
+def blog_page(request):
+    if request.method == 'POST':
+        form = BlogPostForm(request.POST)
+        if form.is_valid():
+            post = form.save(commit=False)
+            post.approved = False 
+            post.save()
+            return redirect('blog_page')
+    else:
+        form = BlogPostForm()
+
+    featured_posts = {
+        'bookReview': BlogPost.objects.filter(approved=True, feature='bookReview').order_by('-created_at'),
+        'authorSpotlight': BlogPost.objects.filter(approved=True, feature='authorSpotlight').order_by('-created_at'),
+        'childrensCorner': BlogPost.objects.filter(approved=True, feature='childrensCorner').order_by('-created_at'),
+        'latest': BlogPost.objects.filter(approved=True, feature='latest').order_by('-created_at'),
+        'userReview': BlogPost.objects.filter(approved=True, feature='userReview').order_by('-created_at'),
+    }
+
+    context = {
+        'form': form,
+        'featured_posts': featured_posts
+    }
+    return render(request, 'Blog.html', context)
+
+-->
+<!--  
+    app urls.py
+path('Blog/', views.blog_page, name='blog_page'),#blog
+-->
+<!-- 
+    models.py
+
+#Blog
+class BlogPost(models.Model):
+    STATUS_CHOICES = [
+        ('draft', 'Draft'),
+        ('published', 'Published'),
+    ]
+    
+    title = models.CharField(max_length=250)
+    author = models.CharField(max_length=100)
+    content = models.TextField()
+    created_at = models.DateTimeField(default=timezone.now)
+    status = models.CharField(max_length=10, choices=STATUS_CHOICES, default='draft')
+    approved = models.BooleanField(default=False)
+    feature = models.CharField(
+        max_length=50,
+        choices=[
+            ('bookReview', 'Book Review'),
+            ('authorSpotlight', 'Author Spotlight'),
+            ('childrensCorner', "Children's Corner"),
+            ('latest', 'Latest'),
+            ('userReview', 'User Review')
+        ],
+        default='bookReview'
+    )
+
+    def _str_(self):
+        return self.title
+-->
+<!--
+    forms.py
+from django import forms
+from django.contrib.auth.models import User
+from .models import BlogPost 
+class SignUpForm(forms.ModelForm):
+    password = forms.CharField(widget=forms.PasswordInput)
+
+    class Meta:
+        model = User
+        fields = ['first_name', 'last_name', 'email', 'password']
+
+#Blog
+class BlogPostForm(forms.ModelForm):
+    class Meta:
+        model = BlogPost
+        fields = ['title', 'content','author','feature']  # Adjust fields as per your BlogPost mode
+-->
+<!--
+     admin.py
+from .models import Product,Category,Event,ContactMessage,BlogPost
+admin.site.register(BlogPost)
+-->
+<!--
+
+-->

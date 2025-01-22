@@ -1,0 +1,172 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Acheivements of IIUC Computer Club</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+            display: flex;
+            flex-direction: column;
+            min-height: 100vh;
+        }
+
+        .header-content {
+            text-align: center;
+            flex: 1;
+            color: rgb(53, 42, 151);
+        }
+
+        .header-content h1 {
+            margin: 0;
+            font-size: 2em;
+        }
+
+        /* Header styling */
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
+        }
+
+        .navbar-brand {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            color: rgb(0, 0, 0);
+            font-size: 1.5rem;
+            font-weight: bold;
+        }
+
+        .navbar-brand .logo {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        main {
+            padding: 2rem;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 2rem;
+        }
+
+        .event-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            width: 300px;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+        }
+
+        .event-card:hover {
+            transform: scale(1.05);
+            box-shadow: 0 6px 10px rgba(0, 0, 0, 0.15);
+        }
+
+        .event-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .event-content {
+            padding: 1.5rem;
+        }
+
+        .event-title {
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+            color: #2575fc;
+        }
+
+        .event-meta {
+            font-size: 0.9rem;
+            color: #555;
+            margin-bottom: 1rem;
+        }
+
+        .event-meta span {
+            display: block;
+        }
+
+        .event-description {
+            font-size: 1rem;
+            line-height: 1.5;
+            color: #666;
+        }
+
+        footer {
+            background: #6a11cb;
+            color: white;
+            text-align: center;
+            padding: 1rem;
+            margin-top: auto;
+        }
+
+        footer p {
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: #ffdf6c;
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container-fluid">
+        <nav class="navbar">
+            <a class="navbar-brand" href="#">
+                <img src="../static/images/logo.png" alt="Club Logo" class="logo"> IIUC Computer Club
+            </a>
+
+
+        </nav>
+        <div class="header-content">
+            <h1>Welcome to Bright Corner</h1>
+
+        </div>
+    </div>
+
+    <main>
+        {% for event in events %}
+        <div class="event-card">
+            <img src="{{ event.image.url }}" alt="Event Image">
+            <div class="event-content">
+                <h2 class="event-title">{{ event.title }}</h2>
+                <div class="event-meta">
+                    <span><strong>Date:</strong> {{ event.date }}</span>
+                    <span><strong>Location:</strong> {{ event.location }}</span>
+                    {% if event.position %}
+                    <span><strong>Position:</strong> {{ event.position }}</span>
+                    {% endif %}
+                </div>
+                <p class="event-description">{{ event.description }}</p>
+            </div>
+        </div>
+        {% empty %}
+        <p>No events to display at the moment. Check back later!</p>
+        {% endfor %}
+    </main>
+
+</body>
+
+</html>
